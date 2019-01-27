@@ -1,0 +1,32 @@
+{
+  "name": "@codin/plugin-lit-html-style",
+  "version": "0.0.1",
+  "description": "rollup plugin for extracting style and embed into lit html",
+  "main": "index.js",
+  "author": {
+    "name": "Odin thomas Rochmannn",
+    "email": "odin.rochmann@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odinr/rollup"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "caniuse-api": "^3.0.0",
+    "cssnano": "^4.1.8",
+    "node-sass": "^4.11.0",
+    "postcss": "^7.0.14",
+    "postcss-preset-env": "^6.5.0",
+    "rollup": "^1.1.2",
+    "rollup-pluginutils": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/caniuse-api": "^3.0.0",
+    "@types/cssnano": "^4.0.0",
+    "@types/node-sass": "^3.10.32"
+  }
+}

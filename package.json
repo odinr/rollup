@@ -1,0 +1,17 @@
+{
+  "name": "codin_rollup",
+  "version": "0.0.1",
+  "description": "rollup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rollup"
+  ],
+  "author": "odin thomas rochmann",
+  "license": "ISC",
+  "dependencies": {
+    "lerna": "^3.10.7"
+  }
+}

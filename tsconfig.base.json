@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "pretty": true,
+    "outDir": ".",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "strict": true,
+    "baseUrl": "./packages",
+    "paths": {
+      "@codin/rollup-*": ["./*/src"]
+    }
+  },
+  "include": ["**/*"],
+  "exclude": []
+}
