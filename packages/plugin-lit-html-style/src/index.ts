@@ -3,7 +3,7 @@ import { createFilter } from "rollup-pluginutils";
 import defaultOptions, { Options } from "./lib/options";
 import createPlugins from "./lib/plugins";
 
-export const name = "lit-hmtl-css";
+export const name = "lit-html-css";
 
 export const plugin: Plugin = (args?: Options) => {
   const { include, exclude, compress, env, template, compiler, processor } = {

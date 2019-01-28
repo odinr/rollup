@@ -12,11 +12,15 @@ export interface Options {
   plugins: any[];
 }
 
+
+export const name = "lit-html-svg";
+
 export const plugin: Plugin = (options: Options) => {
   const { template = outputTemplate, plugins = defaultPlugins } = options;
   const parser = new Svgo({plugins});
   const filter = createFilter();
   return {
+    name,
     transform(data: string, file: string) {
       if(!filter(file)) return null;
       return parser.optimize(data, {path: file}).then(({ data }) => template(data));
