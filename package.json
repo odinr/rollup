@@ -10,7 +10,7 @@
     "rollup"
   ],
   "author": "odin thomas rochmann",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "lerna": "^3.10.7"
   }
