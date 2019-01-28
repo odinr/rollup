@@ -5,5 +5,6 @@ export interface Options {
     template: any;
     plugins: any[];
 }
+export declare const name = "lit-html-svg";
 export declare const plugin: Plugin;
 export default plugin;

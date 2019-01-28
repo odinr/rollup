@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const rollup_pluginutils_1 = require("rollup-pluginutils");
 const options_1 = __importDefault(require("./lib/options"));
 const plugins_1 = __importDefault(require("./lib/plugins"));
-exports.name = "lit-hmtl-css";
+exports.name = "lit-html-css";
 exports.plugin = (args) => {
     const { include, exclude, compress, env, template, compiler, processor } = {
         ...options_1.default,
