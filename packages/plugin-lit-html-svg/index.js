@@ -16,7 +16,7 @@ exports.plugin = (options) => {
         transform(data, file) {
             if (!filter(file))
                 return null;
-            return parser.optimize(data).then(({ data }) => template(data));
+            return parser.optimize(data, { path: file }).then(({ data }) => template(data));
         }
     };
 };

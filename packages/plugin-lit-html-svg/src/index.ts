@@ -19,7 +19,7 @@ export const plugin: Plugin = (options: Options) => {
   return {
     transform(data: string, file: string) {
       if(!filter(file)) return null;
-      return parser.optimize(data).then(({ data }) => template(data));
+      return parser.optimize(data, {path: file}).then(({ data }) => template(data));
     }
   };
 };
