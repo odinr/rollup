@@ -12,9 +12,9 @@ const plugins_1 = __importDefault(require("./lib/plugins"));
 __export(require("./lib/browser"));
 exports.name = "lit-html-css";
 function plugin(args) {
-    console.log(args);
+    const { esmodules = true } = args || {};
     const { include, exclude, compress, env, template, compiler, processor } = {
-        ...options_1.default,
+        ...options_1.default(esmodules),
         ...args
     };
     const filter = rollup_pluginutils_1.createFilter(include, exclude);
@@ -22,9 +22,8 @@ function plugin(args) {
     return {
         name: exports.name,
         transform(data, file) {
-            if (!filter(file) || !compiler || !processor) {
+            if (!filter(file) || !compiler || !processor)
                 return;
-            }
             return compiler({ file, data }).then(res => processor({ ...res, plugins }).then(template));
         }
     };

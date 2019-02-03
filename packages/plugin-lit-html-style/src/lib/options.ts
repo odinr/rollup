@@ -1,7 +1,7 @@
 import { compiler, Compiler } from "./compile";
 import { processor, Processor } from "./process";
 import template, { Template } from "./template";
-import browsers from "./browser";
+import esmodulesBrowser from "./browser";
 
 import { PresetOptions } from "./plugins";
 
@@ -13,16 +13,18 @@ export interface Options {
   template?: Template;
   compiler?: Compiler;
   processor?: Processor;
+  esmodules?: boolean;
 }
 
-export const options: Options = {
-  include: ["**/*.scss"],
-  exclude: [],
-  compress: true,
-  env: { browsers },
-  template,
-  compiler,
-  processor
-};
-
+export function options(esmodules: boolean = true): Options {
+  return {
+    include: ["**/*.scss"],
+    exclude: [],
+    compress: true,
+    env: { browsers: esmodules ? esmodulesBrowser : 'defaults' },
+    template,
+    compiler,
+    processor
+  };
+}
 export default options;

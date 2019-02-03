@@ -7,13 +7,16 @@ const compile_1 = require("./compile");
 const process_1 = require("./process");
 const template_1 = __importDefault(require("./template"));
 const browser_1 = __importDefault(require("./browser"));
-exports.options = {
-    include: ["**/*.scss"],
-    exclude: [],
-    compress: true,
-    env: { browsers: browser_1.default },
-    template: template_1.default,
-    compiler: compile_1.compiler,
-    processor: process_1.processor
-};
-exports.default = exports.options;
+function options(esmodules = true) {
+    return {
+        include: ["**/*.scss"],
+        exclude: [],
+        compress: true,
+        env: { browsers: esmodules ? browser_1.default : 'defaults' },
+        template: template_1.default,
+        compiler: compile_1.compiler,
+        processor: process_1.processor
+    };
+}
+exports.options = options;
+exports.default = options;

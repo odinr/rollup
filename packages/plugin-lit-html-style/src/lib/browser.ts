@@ -1,6 +1,6 @@
 import { getSupport, BrowserSupport } from "caniuse-api";
 
-export const es6Support: BrowserSupport = getSupport("es6-module");
+const es6Support = getSupport("es6-module");
 
 export const es6Supported = Object.keys(es6Support)
   .filter(browser => !!es6Support[browser].y)

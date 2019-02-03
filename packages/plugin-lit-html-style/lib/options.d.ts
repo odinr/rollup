@@ -10,6 +10,7 @@ export interface Options {
     template?: Template;
     compiler?: Compiler;
     processor?: Processor;
+    esmodules?: boolean;
 }
-export declare const options: Options;
+export declare function options(esmodules?: boolean): Options;
 export default options;
