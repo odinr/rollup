@@ -1,0 +1,39 @@
+{
+  "name": "rollup-config-webcomponent",
+  "version": "0.0.1",
+  "description": "@todo",
+  "main": "index.js",
+  "author": {
+    "name": "Odin thomas Rochmannn",
+    "email": "odin.rochmann@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odinr/rollup"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-lit-html-style": "0.0.7",
+    "rollup-plugin-lit-html-svg": "^0.0.4",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-terser": "^4.0.3",
+    "rollup-plugin-typescript2": "^0.19.2",
+    "typescript": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/rollup": "^0.54.0",
+    "@types/rollup-plugin-node-resolve": "^4.0.0",
+    "rollup": "^1.1.2"
+  },
+  "peerDependencies": {
+    "rollup": "1.x",
+    "tslib": "1.9.x"
+  }
+}
