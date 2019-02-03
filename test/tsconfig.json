@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "pretty": false,
+    "outDir": ".",
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "importHelpers": true,
+    "noEmitHelpers": false,
+  },
+  "include": ["./src/**/*"],
+  "exclude": []
+}
