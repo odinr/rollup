@@ -23,19 +23,21 @@ export default config;
 ```
 
 ## options
-### include: `:string[] default: ['**/*.scss']`
 
-### exclude: `:string[] default: []`
+**esmodules** `:boolean default: true`
 
-### compress: `:boolean default: true`
+**include** `:string[] default: ['**/*.scss']`
 
-### env: `:string default: esBrowsers|defaults` 
+**exclude** `:string[] default: []`
+
+**compress** `:boolean default: true`
+
+**env** `:string default: esBrowsers|defaults` 
 > makes a lookup at caniuse-api for browsers that supports `<script type="module"></script>`
 
-### template `:(css:string): string`
+**template** `:(css:string): string`
 
-### compiler `:({file,data}): Promise<{file,data}>`
+**compiler** `:({file,data}): Promise<{file,data}>`
 
-### processor `:({file,data}): Promise<string>`
+**processor** `:({file,data}): Promise<string>`
 
-### esmodules `:boolean default: true`
