@@ -1,8 +1,6 @@
 # rollup-plugin-html-style
-**install**
-```bash
-npm i -D rollup-plugin-html-style
-```
+[![Published on npm](https://img.shields.io/npm/v/rollup-plugin-lit-html-style.svg)](https://www.npmjs.com/package/rollup-plugin-lit-html-style)
+
 **usage**
 
 This module transforms css to a es6 template, you might need to transpile theplugin result.
