@@ -15,6 +15,6 @@
   "author": "odin thomas rochmann",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "^3.10.7"
+    "lerna": "^2.11.0"
   }
 }
