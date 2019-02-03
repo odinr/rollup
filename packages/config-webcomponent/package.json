@@ -1,6 +1,6 @@
 {
   "name": "rollup-config-webcomponent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "@todo",
   "main": "index.js",
   "author": {
@@ -19,7 +19,7 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-lit-html-style": "^0.1.0",
+    "rollup-plugin-lit-html-style": "^0.1.1",
     "rollup-plugin-lit-html-svg": "^0.1.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-serve": "^1.0.1",
