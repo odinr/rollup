@@ -53,7 +53,7 @@ import style from './index.scss';
 
 @customElement('test-element')
 export class Test extends LitElement{
- render(): TemplateResult{
+ render(){
   return html`${style}<p>test</p>`;
  }
 }
