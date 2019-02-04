@@ -7,7 +7,6 @@ const rollup_plugin_babel_1 = __importDefault(require("rollup-plugin-babel"));
 const preset_env_1 = __importDefault(require("@babel/preset-env"));
 exports.plugin = (options) => {
     const { esmodules = true, extensions = [".js", ".mjs", ".ts", ".scss", ".svg"] } = options || {};
-    console.log(esmodules);
     return rollup_plugin_babel_1.default({
         extensions,
         presets: [[preset_env_1.default, { targets: { esmodules } }]]

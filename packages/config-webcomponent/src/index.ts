@@ -17,7 +17,7 @@ export interface Plugins{
 
 export interface Options {
   name: string;
-  input?: string;
+  input: string;
   ecma?: string;
   plugins?: Plugins;
   pkg?: any;
@@ -42,11 +42,11 @@ export const createConfig = (options: Options) => {
   const esmodules = process.env.ecma ? process.env.ecma === '6' : ecma === 6;
   const format = esmodules ? "esm" : "iife";
   const external = bundle ? [] : Object.keys(pkg.dependencies).concat(["tslib"]);
-  const file = `${bundle?'dist/':''}${esmodules?pkg.module:pkg.main}`;
+  const file = `${bundle?'dist/':''}${name}${esmodules?'mjs':'js'}`;
   return {
     input,
     external,
-    output: {format, file},
+    output: {format, file, name},
     plugins: [
       pluginResolve(resolve),
       pluginTypescript({

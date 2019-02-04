@@ -13,11 +13,13 @@
     "webcomponent",
     "lit-html",
     "scss",
-    "sass"
+    "sass",
+    "template",
+    "postcss"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/odinr/rollup"
+    "url": "https://github.com/odinr/rollup/tree/master/packages/plugin-lit-html-style"
   },
   "scripts": {
     "build": "tsc"

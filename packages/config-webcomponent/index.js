@@ -17,11 +17,11 @@ exports.createConfig = (options) => {
     const esmodules = process.env.ecma ? process.env.ecma === '6' : ecma === 6;
     const format = esmodules ? "esm" : "iife";
     const external = bundle ? [] : Object.keys(pkg.dependencies).concat(["tslib"]);
-    const file = `${bundle ? 'dist/' : ''}${esmodules ? pkg.module : pkg.main}`;
+    const file = `${bundle ? 'dist/' : ''}${name}${esmodules ? 'mjs' : 'js'}`;
     return {
         input,
         external,
-        output: { format, file },
+        output: { format, file, name },
         plugins: [
             resolve_1.default(resolve),
             typescript_1.default(Object.assign({}, typescript, { verbosity: !!verbose ? typescript && typescript.verbosity !== undefined ? typescript.verbosity : 2 : 0 })),

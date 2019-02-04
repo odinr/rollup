@@ -25,6 +25,7 @@ export declare const createConfig: (options: Options) => {
     output: {
         format: string;
         file: string;
+        name: string;
     };
     plugins: any[];
 };
