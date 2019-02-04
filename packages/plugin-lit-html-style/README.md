@@ -1,22 +1,47 @@
 # rollup-plugin-html-style
 [![Published on npm](https://img.shields.io/npm/v/rollup-plugin-lit-html-style.svg)](https://www.npmjs.com/package/rollup-plugin-lit-html-style)
 
-## Usage
-
-This module transforms css to a es6 template, you might need to transpile the plugin result.
+## Example
+*test.js*
 ```javascript
-// rollup.config.js
-import style from 'rollup-plugin-lit-html-style';
-import babel from "rollup-plugin-babel";
+import {LitElement,html,customElement} from 'lit-element';
+import style from './test.scss';
 
-export const config = {
- plugins: [
-  style(),
-  babel({
-   extensions = [".js", ".scss"]
-  })
+@customElement('test-element')
+export class Test extends LitElement{
+ render(){
+  return html`${style}<p>test</p>`;
+ }
+}
+```
+*test.scss*
+```css
+:host{
+  display: inline-block;
+  background: red;
+}
+```
+*rollup.config.js*
+```javascript
+import babel from "rollup-plugin-babel";
+import preset from "@babel/preset-env";
+import style from 'rollup-plugin-lit-html-style';
+
+const esmodules = true;
+
+export const config = {
+ input: 'test.js',
+ output: { file: 'demo.js' }
+  plugins: [
+   style({ esmodules }),
+   babel({
+    // include .scss, might need to transpile the es6 template result
+    extensions = [".js", ".scss"],
+    presets: [[preset, { targets: { esmodules } }]]
+   })
  ]
 }
+
 export default config;
 ```
 
@@ -71,46 +96,4 @@ export default (options) => {
       .then(({ css }) => resolve(css), reject);
   });
 };
-```
-## Example
-*test.js*
-```javascript
-import {LitElement,html,customElement} from 'lit-element';
-import style from './test.scss';
-
-@customElement('test-element')
-export class Test extends LitElement{
- render(){
-  return html`${style}<p>test</p>`;
- }
-}
-```
-*test.scss*
-```css
-:host{
-  display: inline-block;
-  background: red;
-}
-```
-*rollup.config.js*
-```javascript
-import babel from "rollup-plugin-babel";
-import preset from "@babel/preset-env";
-import style from 'rollup-plugin-lit-html-style';
-
-const esmodules = true;
-
-export const config = {
- input: 'test.js',
- output: { file: 'demo.js' }
-  plugins: [
-   style({ esmodules }),
-   babel({
-    extensions = [".js", ".scss"],
-    presets: [[preset, { targets: { esmodules } }]]
-   })
- ]
-}
-
-export default config;
 ```

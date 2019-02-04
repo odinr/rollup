@@ -12,6 +12,7 @@
     "plugin",
     "webcomponent",
     "lit-html",
+    "lit-element",
     "scss",
     "sass",
     "template",
