@@ -5,7 +5,9 @@ export interface Options {
   data: string;
 }
 
-export interface Result extends Options {}
+export interface Result {
+  data: string;
+}
 
 export interface Compiler {
   (options: Options): Promise<Result>;
@@ -14,7 +16,7 @@ export interface Compiler {
 export const compiler: Compiler = (options: Options): Promise<Result> =>
   new Promise((resolve, reject) => {
     const resolved = ({ css }: nodeSassResult) =>
-      resolve({ ...options, data: css.toString() });
+      resolve({ data: css.toString() });
     nodeSass.render(options, (err, res) => (err ? reject(err) : resolved(res)));
   });
 

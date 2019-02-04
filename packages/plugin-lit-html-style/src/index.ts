@@ -25,7 +25,7 @@ export function plugin(args?: Options): Plugin {
     transform(data: string, file: string): Promise<string> | void {
       if (!filter(file) || !compiler || !processor) return;
       return compiler({ file, data }).then(res =>
-        processor({ ...res, plugins }).then(template)
+        processor({ file, plugins, data: res.data }).then(template)
       );
     }
   };
