@@ -14,13 +14,13 @@ export interface Plugins {
 }
 export interface Options {
     name: string;
-    input?: string;
+    input: string;
     ecma?: string;
     plugins?: Plugins;
     pkg?: any;
 }
 export declare const createConfig: (options: Options) => {
-    input: string | undefined;
+    input: string;
     external: string[];
     output: {
         format: string;

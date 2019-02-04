@@ -17,7 +17,7 @@ exports.createConfig = (options) => {
     const esmodules = process.env.ecma ? process.env.ecma === '6' : ecma === 6;
     const format = esmodules ? "esm" : "iife";
     const external = bundle ? [] : Object.keys(pkg.dependencies).concat(["tslib"]);
-    const file = `${bundle ? 'dist/' : ''}${name}${esmodules ? 'mjs' : 'js'}`;
+    const file = `${bundle ? 'dist/' : ''}${name}.${esmodules ? 'mjs' : 'js'}`;
     return {
         input,
         external,
