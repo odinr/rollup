@@ -3,7 +3,7 @@
 
 ## Usage
 
-This module transforms css to a es6 template, you might need to transpile theplugin result.
+This module transforms css to a es6 template, you might need to transpile the plugin result.
 ```javascript
 // rollup.config.js
 import style from 'rollup-plugin-lit-html-style';
@@ -22,18 +22,23 @@ export default config;
 
 ## Options
 
-**esmodules**`:boolean default: true`
+### required
+**none**
 
-**include**`:string[] default: ['**/*.scss']`
+### optional
 
-**exclude**`:string[] default: []`
+**esmodules?**`:boolean default: true`
 
-**compress**`:boolean default: true`
+**include?**`:string[] default: ['**/*.scss']`
 
-**env**`:string default: esBrowsers|defaults` 
+**exclude?**`:string[] default: []`
+
+**compress?**`:boolean default: true`
+
+**env?**`:string default: esBrowsers|'defaults'` 
 > if `option.esmodules` the plugin makes a lookup at caniuse-api for browsers that supports `es6-module`, else env is `default` [@BroswerList](https://github.com/browserslist/browserslist#readme)
 
-**template**`:(css:string): string`
+**template?**`:(css:string): string`
 ```javascript
 (css) => `
   import { html } from "lit-element";
@@ -41,7 +46,7 @@ export default config;
   export default style;
 `;
 ```
-**compiler**`:({file,data}): Promise<{data}>`
+**compiler?**`:({file,data}): Promise<{data}>`
 
 > *BringYourOwnCompiler* - atm only `node-sass` is bundled, but provide your own or leave a feature request for other compilers or features?! 
 ```javascript
@@ -53,7 +58,7 @@ export default (options) =>
   });
 ```
 
-**processor**`:({file,data}): Promise<string>`
+**processor?**`:({file,data}): Promise<string>`
 
 > *BringYourOwnProcessor* - this plugin uses `postcss` with `postcss-preset-env` for autoprefix and `cssnano` for compress
 ```javascript
@@ -71,7 +76,7 @@ export default (options) => {
 *test.js*
 ```javascript
 import {LitElement,html,customElement} from 'lit-element';
-import style from './index.scss';
+import style from './test.scss';
 
 @customElement('test-element')
 export class Test extends LitElement{
@@ -81,8 +86,11 @@ export class Test extends LitElement{
 }
 ```
 *test.scss*
-```scss
-:host{background:red}
+```css
+:host{
+  display: inline-block;
+  background: red;
+}
 ```
 *rollup.config.js*
 ```javascript
