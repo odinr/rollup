@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-lit-html-style",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "rollup plugin for extracting style and embed into lit html",
   "main": "index.js",
   "author": {
@@ -24,7 +24,8 @@
     "url": "https://github.com/odinr/rollup/tree/master/packages/plugin-lit-html-style"
   },
   "scripts": {
-    "prepublish": "tsc -b ."
+    "build": "tsc -b .",
+    "prepublish": "npm run build"
   },
   "license": "ISC",
   "dependencies": {
