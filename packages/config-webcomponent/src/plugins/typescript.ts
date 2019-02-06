@@ -8,15 +8,13 @@ export interface Options extends Partial<IOptions> {
  verbosity?: number;
 }
 
-export const plugin = (o?:Partial<IOptions>): any => {
- const {
-  typescript=TypeScript,
-  verbosity=0,
- } = o || {};
- return TypeScript2({
-  typescript,
-  verbosity,
- });
+export const plugin = (o:Partial<IOptions> = {}): any => {
+ const options = {
+  typescript:TypeScript,
+  verbosity:0,
+  ...o
+ };
+ return TypeScript2(options);
 }
 
 export default plugin;

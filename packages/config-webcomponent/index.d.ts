@@ -15,6 +15,7 @@ export interface Plugins {
 export interface Options {
     name: string;
     input: string;
+    dir?: string;
     ecma?: string;
     plugins?: Plugins;
     pkg?: any;
@@ -24,8 +25,9 @@ export declare const createConfig: (options: Options) => {
     external: string[];
     output: {
         format: string;
-        file: string;
         name: string;
+        file: string;
+        dir: string;
     };
     plugins: any[];
 };

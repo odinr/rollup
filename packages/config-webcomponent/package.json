@@ -12,7 +12,7 @@
     "url": "https://github.com/odinr/rollup"
   },
   "scripts": {
-    "build": "tsc"
+    "preversion": "tsc"
   },
   "license": "ISC",
   "dependencies": {

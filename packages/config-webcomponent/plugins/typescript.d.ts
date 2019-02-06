@@ -5,5 +5,5 @@ export interface Options extends Partial<IOptions> {
     typescript?: typeof TypeScript;
     verbosity?: number;
 }
-export declare const plugin: (o?: Partial<IOptions> | undefined) => any;
+export declare const plugin: (o?: Partial<IOptions>) => any;
 export default plugin;

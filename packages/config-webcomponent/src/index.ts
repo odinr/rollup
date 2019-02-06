@@ -18,6 +18,7 @@ export interface Plugins{
 export interface Options {
   name: string;
   input: string;
+  dir?: string,
   ecma?: string;
   plugins?: Plugins;
   pkg?: any;
@@ -33,7 +34,8 @@ const {
 export const createConfig = (options: Options) => {
   const {
     input, 
-    name, 
+    name,
+    dir,
     ecma = 6, 
     plugins = {}, 
     pkg = require(process.cwd() + "/package.json")
@@ -42,14 +44,25 @@ export const createConfig = (options: Options) => {
   const esmodules = process.env.ecma ? process.env.ecma === '6' : ecma === 6;
   const format = esmodules ? "esm" : "iife";
   const external = bundle ? [] : Object.keys(pkg.dependencies).concat(["tslib"]);
-  const file = `${bundle?'dist/':''}${name}.${esmodules?'mjs':'js'}`;
+  const tsconfigDefaults = {
+    compilerOptions:{
+      declaration:!bundle,
+      target: 'esnext'
+    }
+  }
   return {
     input,
     external,
-    output: {format, file, name},
+    output: {
+      format, 
+      name, 
+      file: `${name}.${esmodules?'mjs':'js'}`, 
+      dir: dir?dir:bundle?'dist/':''
+    },
     plugins: [
       pluginResolve(resolve),
       pluginTypescript({
+        tsconfigDefaults,
         ...typescript, 
         verbosity: !!verbose ? typescript && typescript.verbosity !== undefined ? typescript.verbosity:2:0
       }),

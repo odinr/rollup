@@ -12,11 +12,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const TypeScript = __importStar(require("typescript"));
 const rollup_plugin_typescript2_1 = __importDefault(require("rollup-plugin-typescript2"));
-exports.plugin = (o) => {
-    const { typescript = TypeScript, verbosity = 0, } = o || {};
-    return rollup_plugin_typescript2_1.default({
-        typescript,
-        verbosity,
-    });
+exports.plugin = (o = {}) => {
+    const options = Object.assign({ typescript: TypeScript, verbosity: 0 }, o);
+    return rollup_plugin_typescript2_1.default(options);
 };
 exports.default = exports.plugin;
