@@ -6,14 +6,20 @@ This config is not the one config to rule them all, but 'my' config for compilin
 The purpose of this config is to have a single import in your project for all plugins and configs. When dealing with mono-repo with multiple packages, plugins and configs, then things can get out of hands, even with `lerna`.
 
 This config is environment controlled, example `rollup -c --environment bundle,compress,es:6` will create a bundle and compressed javascript file, huh? but also compress the inline css and optimize svg.
+
 ```javascript 
 // rollup.config.js
-import createConfig from "rollup-config-webcomponent";
+import createConfig from "rollup-config-webcomponent";
 export default createConfig({
  name:'foo', 
  input:"./src/index.ts"
 });
 ```
+>🛠WARNING: this is a living config and will change over time!
+> 
+>☠️ Not yet testet in IE(es5), but should work, might need regenetive runtime.
+> 
+>🧁 90%++ support add [webcomponent polyfill](https://unpkg.com/@webcomponents/webcomponentsjs@2.2.6/webcomponents-loader.js)
 
 ## Options
 **name** `:string`
@@ -30,7 +36,7 @@ export default createConfig({
 
 > `typescript` [@rollup-plugin-typescript2](https://www.npmjs.com/package/rollup-plugin-typescript2)
 > - when --bundle `declaration` is set to false, it is recomended to not provide this option in your `tsconfig.json`
-> - `target` default to `esnext` since babel do all the transpiling. *might change in future to enforced*
+> - `target` default to `esnext` since babel do all the transpiling. *might change in future to enforced*
 
 ## Enviroment
 ```
@@ -102,7 +108,7 @@ button {
 
 ```javascript 
 // rollup.config.js
-import createConfig from "rollup-config-webcomponent";
+import createConfig from "rollup-config-webcomponent";
 const config = {
  name: 'foo',
  input: "./src/index.ts"
