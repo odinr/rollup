@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-lit-html-svg",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "rollup plugin for extracting svg and embed into lit html",
   "main": "index.js",
   "author": {
@@ -12,7 +12,7 @@
     "url": "https://github.com/odinr/rollup"
   },
   "scripts": {
-    "prepublishOnly": "tsc -b ."
+    "prepublish": "tsc -b ."
   },
   "license": "ISC",
   "dependencies": {
