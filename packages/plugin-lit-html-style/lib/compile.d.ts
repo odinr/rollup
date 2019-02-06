@@ -2,7 +2,8 @@ export interface Options {
     file: string;
     data: string;
 }
-export interface Result extends Options {
+export interface Result {
+    data: string;
 }
 export interface Compiler {
     (options: Options): Promise<Result>;
