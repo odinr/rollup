@@ -1,15 +1,29 @@
 {
   "name": "rollup-config-webcomponent",
-  "version": "0.1.11",
-  "description": "@todo",
+  "version": "0.1.12",
+  "description": "Rollup config controlled by environment",
   "main": "index.js",
   "author": {
     "name": "Odin thomas Rochmannn",
     "email": "odin.rochmann@gmail.com"
   },
+  "keywords": [
+    "rollup-config",
+    "webcomponent",
+    "lit-html",
+    "scss",
+    "sass",
+    "template",
+    "postcss",
+    "minify",
+    "babel",
+    "terser",
+    "compile",
+    "typescript"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/odinr/rollup"
+    "url": "https://github.com/odinr/rollup/tree/master/packages/config-webcomponent"
   },
   "scripts": {
     "build": "tsc -b .",
@@ -21,7 +35,7 @@
     "@babel/preset-env": "^7.3.1",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-lit-html-style": "^0.1.9",
-    "rollup-plugin-lit-html-svg": "^0.1.3",
+    "rollup-plugin-lit-html-svg": "^0.1.4",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-terser": "^4.0.3",
