@@ -8,15 +8,16 @@
     "email": "odin.rochmann@gmail.com"
   },
   "keywords": [
-    "rollup",
-    "plugin",
+    "rollup-plugin",
     "webcomponent",
     "lit-html",
     "lit-element",
     "scss",
     "sass",
     "template",
-    "postcss"
+    "postcss",
+    "literal",
+    "minify"
   ],
   "repository": {
     "type": "git",
