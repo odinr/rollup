@@ -26,8 +26,7 @@
     "url": "https://github.com/odinr/rollup/tree/master/packages/config-webcomponent"
   },
   "scripts": {
-    "build": "tsc -b .",
-    "prepublish": "npm run build"
+    "prepare": "tsc -b ."
   },
   "license": "ISC",
   "dependencies": {

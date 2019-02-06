@@ -21,8 +21,7 @@
     "url": "https://github.com/odinr/rollup/tree/master/packages/plugin-lit-html-svg"
   },
   "scripts": {
-    "build": "tsc -b .",
-    "prepublish": "npm run build"
+    "prepare": "tsc -b ."
   },
   "license": "ISC",
   "dependencies": {
