@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-lit-html-svg",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "rollup plugin for extracting svg and embed into lit html",
   "main": "index.js",
   "author": {
