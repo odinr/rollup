@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "lerna run build",
+    "update-packages": "lerna exec -- npx npm-check-updates -u",
+    "postupdate-packages": "lerna bootstrap --hoist",
+    "build": "lerna exec -- tsc -b",
     "prepublish": "npm run build",
     "publish": "lerna publish"
   },
@@ -15,6 +17,6 @@
   "author": "odin thomas rochmann",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "^2.11.0"
+    "lerna": "^3.19.0"
   }
 }

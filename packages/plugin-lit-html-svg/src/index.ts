@@ -17,7 +17,7 @@ export const name = "lit-html-svg";
 
 export function plugin(options?: Options): Plugin {
   const { template = outputTemplate, plugins = defaultPlugins } = options||{};
-  const parser = new Svgo({});//{plugins});
+  const parser = new Svgo({plugins});
   const filter = createFilter(["**/*.svg"],[]);
   return {
     name,
@@ -25,7 +25,7 @@ export function plugin(options?: Options): Plugin {
       if(!filter(file)) return null;
       return String(fs.readFileSync(file));
     },
-    transform(data: string, file: string): Promise<string> | void {
+    transform(data: string, file: string): Promise<string> | undefined {
       if(!filter(file)) return;
       return parser.optimize(data, {path: file}).then(({ data }) => template(data));
     }

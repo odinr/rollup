@@ -6,6 +6,10 @@ import pluginTerser, {Options as optionTerser} from './plugins/terser';
 import pluginTypescript, {Options as optionTypescript} from './plugins/typescript';
 import pluginServer, {Options as optionServer} from './plugins/server';
 
+//
+const pluginProgress = require("rollup-plugin-progress");
+const pluginFilesize = require("rollup-plugin-filesize");
+
 export interface Plugins{
   resolve?: optionResolve;
   typescript?: optionTypescript;
@@ -22,6 +26,8 @@ export interface Options {
   ecma?: string;
   plugins?: Plugins;
   pkg?: any;
+  compress: boolean;
+  bundle: boolean;
 }
 
 const { 
@@ -38,26 +44,31 @@ export const createConfig = (options: Options) => {
     dir,
     ecma = 6, 
     plugins = {}, 
-    pkg = require(process.cwd() + "/package.json")
+    pkg = require(process.cwd() + "/package.json"),
+    ...opt
   } = options;
   const {resolve, typescript, style, terser, server} = plugins;
   const esmodules = process.env.ecma ? process.env.ecma === '6' : ecma === 6;
   const format = esmodules ? "esm" : "iife";
-  const external = bundle ? [] : Object.keys(pkg.dependencies).concat(["tslib"]);
+  const doBundle = !!bundle || opt.bundle;
+  const doCompress = !!compress || opt.compress;
+  const external = doBundle ? [] : Object.keys(pkg.dependencies).concat(["tslib"]);
   const tsconfigDefaults = {
+    typescript: require('typescript'),
+    objectHashIgnoreUnknownHack: true,
     compilerOptions:{
-      declaration:!bundle,
-      target: 'esnext'
+      declaration:!doBundle,
+      target: 'esm'
     }
   }
-  return {
+  const _config = {
     input,
     external,
     output: {
       format, 
       name, 
-      file: `${name}.${esmodules?'mjs':'js'}`, 
-      dir: dir?dir:bundle?'dist/':''
+      file: dir ? undefined : `${name}.${esmodules?'mjs':'js'}`, 
+      dir: dir?dir:bundle?'dist/':undefined
     },
     plugins: [
       pluginResolve(resolve),
@@ -69,13 +80,16 @@ export const createConfig = (options: Options) => {
       pluginStyle({
         ...style, 
         esmodules, 
-        compress: !compress && style && style.compress === true ? true : !compress}),
+        compress: !doCompress && style && style.compress === true ? true : !doCompress}),
       pluginSvg(),
-      pluginBabel({esmodules}),
-      !!compress && pluginTerser(terser),
+      pluginProgress(),
+      pluginFilesize(),
+      doBundle && pluginBabel({esmodules}),
+      doCompress && pluginTerser(terser),
       !!serve && pluginServer(server),
     ].filter((p) => !!p)
   };
+  return _config;
 }
 
 export default createConfig;

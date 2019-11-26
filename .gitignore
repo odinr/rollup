@@ -1,5 +1,4 @@
 node_modules
-packages/**/package-lock.json
 test/dist
 *_cache
 lerna-debug.log

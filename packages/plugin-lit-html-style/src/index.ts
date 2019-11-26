@@ -22,7 +22,7 @@ export function plugin(args?: Options): Plugin {
       if(!filter(file)) return null;
       return String(fs.readFileSync(file));
     },
-    transform(data: string, file: string): Promise<string> | void {
+    transform(data: string, file: string): Promise<string> | undefined {
       if (!filter(file) || !compiler || !processor) return;
       return compiler({ file, data }).then(res =>
         processor({ file, plugins, data: res.data }).then(template)

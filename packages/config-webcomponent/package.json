@@ -30,24 +30,29 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
-    "rollup-plugin-babel": "^4.3.2",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "core-js": "^3.4.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-filesize": "^6.2.1",
     "rollup-plugin-lit-html-style": "^0.1.15",
     "rollup-plugin-lit-html-svg": "^0.1.5",
-    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-serve": "^1.0.1",
-    "rollup-plugin-terser": "^4.0.3",
-    "rollup-plugin-typescript2": "^0.19.2",
-    "typescript": "^3.3.1"
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.25.2",
+    "typescript": "^3.7.2"
   },
   "devDependencies": {
+    "@types/node": "^12.12.13",
     "@types/rollup": "^0.54.0",
-    "@types/rollup-plugin-node-resolve": "^4.0.0",
+    "@types/rollup-plugin-node-resolve": "^4.1.0",
+    "ncu": "^0.2.1",
     "rollup": "^1.1.2"
   },
   "peerDependencies": {
     "rollup": "1.x",
-    "tslib": "1.9.x"
+    "tslib": "1.10.x"
   }
 }
