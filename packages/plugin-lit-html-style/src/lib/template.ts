@@ -3,8 +3,8 @@ export interface Template {
 }
 
 export const template: Template = (css: string) => `
-  import { html } from "lit-element";
-  export const style = html\`<style>${css}</style>\`;
+  import { css } from "lit-element";
+  export const style = css\`<style>${css}</style>\`;
   export default style;
 `;
 
