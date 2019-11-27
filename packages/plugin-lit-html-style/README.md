@@ -1,6 +1,11 @@
 # rollup-plugin-html-style
 [![Published on npm](https://img.shields.io/npm/v/rollup-plugin-lit-html-style.svg)](https://www.npmjs.com/package/rollup-plugin-lit-html-style)
 
+### Changes in 2.0
+
+exported template is no longer TemplateResult but CSSResult.
+if fore some rease you need to inject style directly into template, use unsafehtml or provide your own tempplate
+
 ## Example
 *test.js*
 ```javascript
@@ -9,9 +14,10 @@ import style from './test.scss';
 
 @customElement('test-element')
 export class Test extends LitElement{
- render(){
-  return html`${style}<p>test</p>`;
- }
+  static styles = [style]
+  render(){
+    return html`<p>test</p>`;
+  }
 }
 ```
 *test.scss*
