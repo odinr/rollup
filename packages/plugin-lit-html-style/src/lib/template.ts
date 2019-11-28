@@ -4,7 +4,7 @@ export interface Template {
 
 export const template: Template = (css: string) => `
   import { css } from "lit-element";
-  export const style = css\`<style>${css}</style>\`;
+  export const style = css\`${css}\`;
   export default style;
 `;
 
