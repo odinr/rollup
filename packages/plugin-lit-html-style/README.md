@@ -6,6 +6,10 @@
 exported template is no longer TemplateResult but CSSResult.
 if fore some rease you need to inject style directly into template, use unsafehtml or provide your own tempplate
 
+- all local scss imports **must** start with relative path! (otherwise resolved to node_module)
+- files are resolved from processed.cwd (might enchance when time)
+- resolving can be overridden by compilerOptions (@see [node-sass](https://www.npmjs.com/package/node-sass))
+
 ## Example
 *test.js*
 ```javascript
@@ -69,7 +73,7 @@ export default config;
 **env?**`:string default: esBrowsers|'defaults'` 
 > if `option.esmodules` the plugin makes a lookup at caniuse-api for browsers that supports `es6-module`, else env is `default` [@BroswerList](https://github.com/browserslist/browserslist#readme)
 
-**template?**`:(css:string): string`
+**template?**`:(css: string) => string`
 ```javascript
 (css) => `
   import { html } from "lit-element";
@@ -77,7 +81,7 @@ export default config;
   export default style;
 `;
 ```
-**compiler?**`:({file,data}): Promise<{data}>`
+**compiler?**`:({ file, data, ...options }) => Promise<{data}>`
 
 > *BringYourOwnCompiler* - atm only `node-sass` is bundled, but provide your own or leave a feature request for other compilers or features?! 
 ```javascript
@@ -89,7 +93,7 @@ export default (options) =>
   });
 ```
 
-**processor?**`:({file,data}): Promise<string>`
+**processor?**`:({ file, data }) => Promise<string>`
 
 > *BringYourOwnProcessor* - this plugin uses `postcss` with `postcss-preset-env` for autoprefix and `cssnano` for compress
 ```javascript

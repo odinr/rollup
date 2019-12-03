@@ -7,6 +7,7 @@
     "name": "Odin thomas Rochmannn",
     "email": "odin.rochmann@gmail.com"
   },
+  "files": ["lib"],
   "keywords": [
     "rollup-plugin",
     "webcomponent",
