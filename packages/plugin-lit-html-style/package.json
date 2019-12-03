@@ -1,13 +1,15 @@
 {
   "name": "rollup-plugin-lit-html-style",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "rollup plugin for extracting style and embed into lit html",
   "main": "index.js",
   "author": {
     "name": "Odin thomas Rochmannn",
     "email": "odin.rochmann@gmail.com"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "rollup-plugin",
     "webcomponent",
