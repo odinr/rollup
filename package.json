@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "lerna exec -- rm -f package-lock.json",
+    "postclean": "lerna exec -- npm install",
     "update-packages": "lerna exec -- npx npm-check-updates -u",
     "postupdate-packages": "lerna bootstrap --hoist",
     "build": "lerna exec -- tsc -b",
