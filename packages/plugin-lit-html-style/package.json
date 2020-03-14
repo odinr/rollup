@@ -33,18 +33,18 @@
   "dependencies": {
     "caniuse-api": "^3.0.0",
     "cssnano": "^4.1.10",
-    "node-sass": "^4.13.0",
-    "postcss": "^7.0.23",
+    "node-sass": "^4.13.1",
+    "postcss": "^7.0.27",
     "postcss-preset-env": "^6.7.0",
     "rollup-pluginutils": "^2.8.2"
   },
   "peerDependencies": {
-    "rollup": "1.x"
+    "rollup": "2.x"
   },
   "devDependencies": {
     "@types/caniuse-api": "^3.0.0",
     "@types/cssnano": "^4.0.0",
-    "@types/node": "^12.12.14",
+    "@types/node": "^13.9.1",
     "@types/node-sass": "^4.11.0",
     "ncu": "^0.2.1",
     "rollup": "^1.1.2"
