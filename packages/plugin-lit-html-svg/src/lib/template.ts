@@ -1,10 +1,10 @@
 export interface Template {
- (css: string): string;
+ (data: string): string;
 }
 
-export const template: Template = (css: string) => `
+export const template: Template = (data: string) => `
   import { svg } from "lit-element";
-  export const symbol = svg\`${css}\`;
+  export const symbol = svg\`${data}\`;
   export default symbol;
 `;
 
