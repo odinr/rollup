@@ -1,4 +1,4 @@
-import nodeSass, { Result as nodeSassResult } from "node-sass";
+import sass, { Result as sassResult } from "sass";
 
 export interface Options {
   file: string;
@@ -15,9 +15,9 @@ export interface Compiler {
 
 export const compiler: Compiler = (options: Options): Promise<Result> =>
   new Promise((resolve, reject) => {
-    const resolved = ({ css }: nodeSassResult) =>
+    const resolved = ({ css }: sassResult) =>
       resolve({ data: css.toString() });
-    nodeSass.render(options, (err, res) => (err ? reject(err) : resolved(res)));
+    sass.render(options, (err, res) => (err ? reject(err) : resolved(res)));
   });
 
 export default compiler;

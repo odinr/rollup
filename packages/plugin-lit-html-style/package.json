@@ -31,12 +31,13 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@types/sass": "^1.16.0",
     "caniuse-api": "^3.0.0",
     "cssnano": "^4.1.10",
-    "node-sass": "^4.13.1",
     "postcss": "^7.0.27",
     "postcss-preset-env": "^6.7.0",
-    "rollup-pluginutils": "^2.8.2"
+    "rollup-pluginutils": "^2.8.2",
+    "sass": "^1.26.3"
   },
   "peerDependencies": {
     "rollup": "2.x"

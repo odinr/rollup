@@ -1,6 +1,9 @@
 # rollup-plugin-html-style
 [![Published on npm](https://img.shields.io/npm/v/rollup-plugin-lit-html-style.svg)](https://www.npmjs.com/package/rollup-plugin-lit-html-style)
 
+### Changes in 3.0
+- node-sass has been replaced with [sass](https://www.npmjs.com/package/sass)
+
 ### Changes in 2.0
 
 exported template is no longer TemplateResult but CSSResult.
