@@ -83,6 +83,7 @@ export const createConfig = (options: Options) => {
         compress: !doCompress && style && style.compress === true ? true : !doCompress}),
       pluginSvg(),
       pluginProgress(),
+      // https://github.com/ritz078/rollup-plugin-filesize/issues/57
       pluginFilesize(),
       doBundle && pluginBabel({esmodules}),
       doCompress && pluginTerser(terser),

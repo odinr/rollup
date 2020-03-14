@@ -7,6 +7,10 @@ The purpose of this config is to have a single import in your project for all pl
 
 This config is environment controlled, example `rollup -c --environment bundle,compress,es:6` will create a bundle and compressed javascript file, huh? but also compress the inline css and optimize svg.
 
+**issues**
+
+- [Accessing "isAsset" on files in the bundle is deprecated, please use "type === 'asset'" instead](https://github.com/ritz078/rollup-plugin-filesize/issues/57) - no impact
+
 ```javascript 
 // rollup.config.js
 import createConfig from "rollup-config-webcomponent";
