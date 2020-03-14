@@ -1,6 +1,6 @@
 {
   "name": "rollup-config-webcomponent",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Rollup config controlled by environment",
   "main": "index.js",
   "author": {
@@ -35,8 +35,8 @@
     "core-js": "^3.6.4",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-filesize": "^6.2.1",
-    "rollup-plugin-lit-html-style": "^0.2.4",
-    "rollup-plugin-lit-html-svg": "^0.2.1",
+    "rollup-plugin-lit-html-style": "^0.2.5",
+    "rollup-plugin-lit-html-svg": "^0.2.2",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-serve": "^1.0.1",
