@@ -1,6 +1,6 @@
 {
   "name": "rollup-config-webcomponent",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Rollup config controlled by environment",
   "main": "index.js",
   "author": {
