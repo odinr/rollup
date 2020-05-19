@@ -10,7 +10,8 @@
     "update-packages": "lerna exec -- npx npm-check-updates -u",
     "postupdate-packages": "lerna bootstrap --hoist",
     "build": "lerna exec -- tsc -b",
-    "prepublish": "npm run build",
+    "prepublish": "lerna bootstrap",
+    "prepack": "npm run build",
     "publish": "lerna publish"
   },
   "keywords": [

@@ -12,8 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "lit-element": "^2.2.1",
-    "rollup": "^1.27.5",
-    "rollup-config-webcomponent": "file:../packages/config-webcomponent"
+    "rollup": "^2.0.6",
+    "rollup-config-webcomponent": "file:../packages/config-webcomponent",
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
     "@material/ripple": "^4.0.0"
