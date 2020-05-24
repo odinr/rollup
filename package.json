@@ -4,7 +4,7 @@
   "description": "rollup",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm --prefix test run build",
     "clean": "lerna exec -- rm -f package-lock.json",
     "postclean": "lerna exec -- npm install",
     "update-packages": "lerna exec -- npx npm-check-updates -u",
